@@ -27,7 +27,7 @@ option(BUILD_SHARED_LIBS "Build libraries as shared libraries" OFF)
 include(cmake/pods.cmake)
 
 include(cmake/lcmtypes.cmake)
-lcmtypes_build(C_AGGREGATE_HEADER bot_core.h CPP_AGGREGATE_HEADER bot_core.hpp EXPORT ${POD_NAME})
+lcmtypes_build(EXPORT ${POD_NAME})
 
 
 set(EXPORT_FILE ${POD_NAME}-targets.cmake)

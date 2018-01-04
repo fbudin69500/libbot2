@@ -169,7 +169,9 @@ function(lcmtypes_build_c)
     set_target_properties(${libname} PROPERTIES CLEAN_DIRECT_OUTPUT 1)
     target_link_libraries(${libname} ${lcm_namespace}lcm-coretypes ${lcm_namespace}lcm)
     target_include_directories(${libname} PUBLIC
+        $<BUILD_INTERFACE:${PROJECT_BINARY_DIR}/include/lcmtypes>
         $<BUILD_INTERFACE:${PROJECT_BINARY_DIR}/include>
+        $<INSTALL_INTERFACE:include/lcmtypes>
         $<INSTALL_INTERFACE:include> )
     add_dependencies(${libname} lcmgen_c)
 
